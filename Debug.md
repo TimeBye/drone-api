@@ -1,7 +1,7 @@
 # Debug
 ---
 
-### 1、
+### 1、api-debug-pprof
 
 > - 需要用户授权验证。
 
@@ -40,7 +40,8 @@ Content-Type: text/html; charset=utf-8
 
 ```
 
-### 2、
+### 2、api-debug-pprof-block
+
 
 > - 需要用户授权验证。
 
@@ -63,7 +64,8 @@ cycles/second=2494244678
 ```
 
 
-### 3、
+### 3、api-debug-pprof-cmdline
+
 
 > - 需要用户授权验证。
 
@@ -85,7 +87,8 @@ Content-Type: text/plain; charset=utf-8
 ```
 
 
-### 4、
+### 4、api-debug-pprof-goroutine
+
 
 > - 需要用户授权验证。
 
@@ -121,7 +124,8 @@ goroutine profile: total 17
 1 @ 0x44f2f3 0x45e017 0x45d572 0x7cc5ed 0x47fd01
 ```
 
-### 5、
+### 5、api-debug-pprof-heap
+
 
 > - 需要用户授权验证。
 
@@ -172,7 +176,8 @@ heap profile: 0: 0 [7: 45392] @ heap/1048576
 ```
 
 
-### 6、
+### 6、api-debug-pprof-profile
+
 
 > - 需要用户授权验证。
 
@@ -194,7 +199,8 @@ Content-Type: application/octet-stream
 ```
 
 
-### 7、
+### 7、api-debug-pprof-symbol
+
 
 > - 需要用户授权验证。
 
@@ -215,7 +221,8 @@ Content-Type: text/plain; charset=utf-8
 num_symbols: 1
 ```
 
-### 8、
+### 8、api-debug-pprof-symbol
+
 
 > - 需要用户授权验证。
 
@@ -235,7 +242,8 @@ POST	/api/debug/pprof/symbol
 ```
 
 
-### 9、
+### 9、api-debug-pprof-threadcreate
+
 
 > - 需要用户授权验证。
 
@@ -258,7 +266,8 @@ threadcreate profile: total 8
 ```
 
 
-### 10、
+### 10、api-debug-pprof-trace
+
 
 > - 需要用户授权验证。
 
