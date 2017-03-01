@@ -1,5 +1,5 @@
-# API概述：
----
+# API概述
+
 Drone提供了一个全面的API，用于与Drone服务器交互。文档的此部分提供了用于验证和使用远程API的说明。
 
 ### 官方库
@@ -92,24 +92,24 @@ Content-Type: application/json
 24	|	secret管理	|	给指定仓库增加secret	|	POST	|	[/api/repos/:owner/:name/secrets](./secret管理.md/#2给指定仓库增加secret)	|	server.PostSecret
 25	|	secret管理	|	删除仓库指定的secret	|	DELETE	|	[/api/repos/:owner/:name/secrets/:secret](./secret管理.md/#3删除仓库指定的secret)	|	server.DeleteSecret
 26	|	secret管理	|	更新仓库secret【待测】	|	POST	|	[/api/repos/:owner/:name/sign](./secret管理.md/#4更新仓库secret)	|	server.Sign
-27	|	secret管理	|	查询组织的secret	|	GET	|	[/api/teams/:team/secrets](./secret管理.md/#5查询组织的secret)	|	server.GetTeamSecrets
-28	|	secret管理	|	增加组织的secret	|	POST	|	[/api/teams/:team/secrets](./secret管理.md/#6增加组织的secret)	|	server.PostTeamSecret
-29	|	secret管理	|	删除组织的secret	|	DELETE	|	[/api/teams/:team/secrets/:secret](./secret管理.md/#7删除组织的secret)	|	server.DeleteTeamSecret
-30	|	secret管理	|	查询全局secrets	|	GET	|	[/api/global/secrets](./secret管理.md/#8查询全局secrets)	|	server.GetGlobalSecrets
-31	|	secret管理	|	增加全局secrets	|	POST	|	[/api/global/secrets](./secret管理.md/#9增加全局secrets)	|	server.PostGlobalSecret
-32	|	secret管理	|	删除全局secrets	|	DELETE	|	[/api/global/secrets/:secret](./secret管理.md/#10删除全局secrets)	|	server.DeleteGlobalSecret
+27	|	secret管理	|	查询组织的secret【待测】	|	GET	|	[/api/teams/:team/secrets](./secret管理.md/#5查询组织的secret)	|	server.GetTeamSecrets
+28	|	secret管理	|	增加组织的secret【待测】	|	POST	|	[/api/teams/:team/secrets](./secret管理.md/#6增加组织的secret)	|	server.PostTeamSecret
+29	|	secret管理	|	删除组织的secre【待测】	|	DELETE	|	[/api/teams/:team/secrets/:secret](./secret管理.md/#7删除组织的secret)	|	server.DeleteTeamSecret
+30	|	secret管理	|	查询全局secrets【待测】	|	GET	|	[/api/global/secrets](./secret管理.md/#8查询全局secrets)	|	server.GetGlobalSecrets
+31	|	secret管理	|	增加全局secrets【待测】	|	POST	|	[/api/global/secrets](./secret管理.md/#9增加全局secrets)	|	server.PostGlobalSecret
+32	|	secret管理	|	删除全局secrets【待测】	|	DELETE	|	[/api/global/secrets/:secret](./secret管理.md/#10删除全局secrets)	|	server.DeleteGlobalSecret
 33	|	其它	|	api-agents【待测】	|	GET	|	[/api/agents](./其它.md/#1api-agents)	|	server.GetAgents
 34	|	其它	|	查看CC-Menu	|	GET	|	[/api/badges/:owner/:name/cc.xml](./其它.md/#2查看CC-Menu)	|	server.GetCC
 35	|	其它	|	获取构建徽章	|	GET	|	[/api/badges/:owner/:name/status.svg](./其它.md/#3获取构建徽章)	|	server.GetBadge
-36	|	Debug	|	api-debug-pprof【待测】	|	GET	|	[/api/debug/pprof/](./Debug.md/#1api-debug-pprof)	|	server.IndexHandler.func1
-37	|	Debug	|	api-debug-pprof-block【待测】	|	GET	|	[/api/debug/pprof/block](./Debug.md/#2api-debug-pprof-block)	|	server.BlockHandler.func1
-38	|	Debug	|	api-debug-pprof-cmdline【待测】	|	GET	|	[/api/debug/pprof/cmdline](./Debug.md/#3api-debug-pprof-cmdline)	|	server.CmdlineHandler.func1
-39	|	Debug	|	api-debug-pprof-goroutine【待测】	|	GET	|	[/api/debug/pprof/goroutine](./Debug.md/#4api-debug-pprof-goroutine)	|	server.GoroutineHandler.func1
-40	|	Debug	|	api-debug-pprof-heap【待测】	|	GET	|	[/api/debug/pprof/heap](./Debug.md/#5api-debug-pprof-heap)	|	server.HeapHandler.func1
-41	|	Debug	|	api-debug-pprof-profile【待测】	|	GET	|	[/api/debug/pprof/profile](./Debug.md/#6api-debug-pprof-profile)	|	server.ProfileHandler.func1
-42	|	Debug	|	api-debug-pprof-symbol【待测】	|	GET	|	[/api/debug/pprof/symbol](./Debug.md/#7api-debug-pprof-symbol)	|	server.SymbolHandler.func1
-43	|	Debug	|	api-debug-pprof-symbol【待测】	|	POST	|	[/api/debug/pprof/symbol](./Debug.md/#8api-debug-pprof-symbol)	|	server.SymbolHandler.func1
-44	|	Debug	|	api-debug-pprof-threadcreate【待测】	|	GET	|	[/api/debug/pprof/threadcreate](./Debug.md/#9api-debug-pprof-threadcreate)	|	server.ThreadCreateHandler.func1
-45	|	Debug	|	api-debug-pprof-trace【待测】	|	GET	|	[/api/debug/pprof/trace](./Debug.md/#10api-debug-pprof-trace)	|	server.TraceHandler.func1
+36	|	Debug	|	api-debug-pprof|	GET	|	[/api/debug/pprof/](./Debug.md/#1api-debug-pprof)	|	server.IndexHandler.func1
+37	|	Debug	|	api-debug-pprof-block	|	GET	|	[/api/debug/pprof/block](./Debug.md/#2api-debug-pprof-block)	|	server.BlockHandler.func1
+38	|	Debug	|	api-debug-pprof-cmdline	|	GET	|	[/api/debug/pprof/cmdline](./Debug.md/#3api-debug-pprof-cmdline)	|	server.CmdlineHandler.func1
+39	|	Debug	|	api-debug-pprof-goroutine	|	GET	|	[/api/debug/pprof/goroutine](./Debug.md/#4api-debug-pprof-goroutine)	|	server.GoroutineHandler.func1
+40	|	Debug	|	api-debug-pprof-heap |	GET	|	[/api/debug/pprof/heap](./Debug.md/#5api-debug-pprof-heap)	|	server.HeapHandler.func1
+41	|	Debug	|	api-debug-pprof-profile |	GET	|	[/api/debug/pprof/profile](./Debug.md/#6api-debug-pprof-profile)	|	server.ProfileHandler.func1
+42	|	Debug	|	api-debug-pprof-symbol |	GET	|	[/api/debug/pprof/symbol](./Debug.md/#7api-debug-pprof-symbol)	|	server.SymbolHandler.func1
+43	|	Debug	|	api-debug-pprof-symbol |	POST	|	[/api/debug/pprof/symbol](./Debug.md/#8api-debug-pprof-symbol)	|	server.SymbolHandler.func1
+44	|	Debug	|	api-debug-pprof-threadcreate |	GET	|	[/api/debug/pprof/threadcreate](./Debug.md/#9api-debug-pprof-threadcreate)	|	server.ThreadCreateHandler.func1
+45	|	Debug	|	api-debug-pprof-trace |	GET	|	[/api/debug/pprof/trace](./Debug.md/#10api-debug-pprof-trace)	|	server.TraceHandler.func1
 
 
