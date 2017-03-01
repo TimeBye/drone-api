@@ -64,50 +64,51 @@ Content-Type: application/json
 
 ### API索引
 
-序号	|	模块	|	功能简述	|	请求方式	|	请求地址	|	详细描述	|	后台响应方法
----|---|---|---|---|---|---
-1	|	用户管理	|	当前用户信息	|	GET	|	[/api/user](./当前用户信息.md/#操作仓库记录 )	|	获取当前登录用户的详细信息	|	github.com/drone/drone/server.GetSelf
-2	|	用户管理	|	当前用户操作仓库记录	|	GET	|	[/api/user/feed]( )	|	0	|	github.com/drone/drone/server.GetFeed
-3	|	用户管理	|	所属当前用户的已开启WebHook的仓库信息	|	GET	|	[/api/user/repos]( )	|	0	|	github.com/drone/drone/server.GetRepos
-4	|	用户管理	|	所属当前用户的所有仓库信息	|	GET	|	[/api/user/repos/remote]( )	|	0	|	github.com/drone/drone/server.GetRemoteRepos
-5	|	用户管理	|	销毁当前用户token	|	DELETE	|	[/api/user/token]( )	|	0	|	github.com/drone/drone/server.DeleteToken
-6	|	用户管理	|	获取当前用户token	|	POST	|	[/api/user/token]( )	|	0	|	github.com/drone/drone/server.PostToken
-7	|	用户管理	|	获取所有用户信息	|	GET	|	[/api/users]( )	|	0	|	github.com/drone/drone/server.GetUsers
-8	|	用户管理	|	创建用户	|	POST	|	[/api/users]( )	|	0	|	github.com/drone/drone/server.PostUser
-9	|	用户管理	|	删除指定用户	|	DELETE	|	[/api/users/:login]( )	|	0	|	github.com/drone/drone/server.DeleteUser
-10	|	用户管理	|	获取指定用户信息	|	GET	|	[/api/users/:login]( )	|	0	|	github.com/drone/drone/server.GetUser
-11	|	用户管理	|	更新用户信息	|	PATCH	|	[/api/users/:login]( )	|	0	|	github.com/drone/drone/server.PatchUser
-12	|	构建管理	|	查询当前正在构建仓库信息	|	GET	|	[/api/builds]( )	|	0	|	github.com/drone/drone/server.GetBuildQueue
-13	|	构建管理	|	获取仓库构建信息	|	GET	|	[/api/repos/:owner/:name/builds]( )	|	0	|	github.com/drone/drone/server.GetBuilds
-14	|	构建管理	|	获取指定构建信息	|	GET	|	[/api/repos/:owner/:name/builds/:number]( )	|	0	|	github.com/drone/drone/server.GetBuild
-15	|	构建管理	|	重新构建	|	POST	|	[/api/repos/:owner/:name/builds/:number]( )	|	0	|	github.com/drone/drone/server.PostBuild
-16	|	构建管理	|	取消指定的构建	|	DELETE	|	[/api/repos/:owner/:name/builds/:number/:job]( )	|	0	|	github.com/drone/drone/server.DeleteBuild
-17	|	仓库管理	|	删除仓库构建信息	|	DELETE	|	[/api/repos/:owner/:name]( )	|	0	|	github.com/drone/drone/server.DeleteRepo
-18	|	仓库管理	|	获取仓库信息	|	GET	|	[/api/repos/:owner/:name]( )	|	0	|	github.com/drone/drone/server.GetRepo
-19	|	仓库管理	|	更新仓库响应配置	|	PATCH	|	[/api/repos/:owner/:name]( )	|	0	|	github.com/drone/drone/server.PatchRepo
-20	|	仓库管理	|	激活仓库事件响应	|	POST	|	[/api/repos/:owner/:name]( )	|	0	|	github.com/drone/drone/server.PostRepo
-21	|	仓库管理	|	0	|	POST	|	[/api/repos/:owner/:name/chown]( )	|	0	|	github.com/drone/drone/server.ChownRepo
-22	|	仓库管理	|	获取构建日志	|	GET	|	[/api/repos/:owner/:name/logs/:number/:job]( )	|	0	|	github.com/drone/drone/server.GetBuildLogs
-23	|	仓库管理	|	获取设置在仓库中的secret	|	GET	|	[/api/repos/:owner/:name/secrets]( )	|	0	|	github.com/drone/drone/server.GetSecrets
-24	|	仓库管理	|	给指定仓库增加secret	|	POST	|	[/api/repos/:owner/:name/secrets]( )	|	0	|	github.com/drone/drone/server.PostSecret
-25	|	仓库管理	|	删除仓库指定的secret	|	DELETE	|	[/api/repos/:owner/:name/secrets/:secret]( )	|	0	|	github.com/drone/drone/server.DeleteSecret
-26	|	仓库管理	|	更新仓库secret	|	POST	|	[/api/repos/:owner/:name/sign]( )	|	0	|	github.com/drone/drone/server.Sign
-27	|	组织secret	|	查询组织的secret	|	GET	|	[/api/teams/:team/secrets]( )	|	0	|	github.com/drone/drone/server.GetTeamSecrets
-28	|	组织secret	|	增加组织的secret	|	POST	|	[/api/teams/:team/secrets]( )	|	0	|	github.com/drone/drone/server.PostTeamSecret
-29	|	组织secret	|	删除组织的secret	|	DELETE	|	[/api/teams/:team/secrets/:secret]( )	|	0	|	github.com/drone/drone/server.DeleteTeamSecret
-30	|	全局secret	|	查询全局secrets	|	GET	|	[/api/global/secrets]( )	|	0	|	github.com/drone/drone/server.GetGlobalSecrets
-31	|	全局secret	|	增加全局secrets	|	POST	|	[/api/global/secrets]( )	|	0	|	github.com/drone/drone/server.PostGlobalSecret
-32	|	全局secret	|	删除全局secrets	|	DELETE	|	[/api/global/secrets/:secret]( )	|	0	|	github.com/drone/drone/server.DeleteGlobalSecret
-33	|	0	|	0	|	GET	|	[/api/agents]( )	|	0	|	github.com/drone/drone/server.GetAgents
-34	|	0	|	查看CC Menu	|	GET	|	[/api/badges/:owner/:name/cc.xml]( )	|	0	|	github.com/drone/drone/server.GetCC
-35	|	0	|	获取构建徽章	|	GET	|	[/api/badges/:owner/:name/status.svg]( )	|	0	|	github.com/drone/drone/server.GetBadge
-36	|	Debug	|	0	|	GET	|	[/api/debug/pprof/]( )	|	0	|	github.com/drone/drone/server.IndexHandler.func1
-37	|	Debug	|	0	|	GET	|	[/api/debug/pprof/block]( )	|	0	|	github.com/drone/drone/server.BlockHandler.func1
-38	|	Debug	|	0	|	GET	|	[/api/debug/pprof/cmdline]( )	|	0	|	github.com/drone/drone/server.CmdlineHandler.func1
-39	|	Debug	|	0	|	GET	|	[/api/debug/pprof/goroutine]( )	|	0	|	github.com/drone/drone/server.GoroutineHandler.func1
-40	|	Debug	|	0	|	GET	|	[/api/debug/pprof/heap]( )	|	0	|	github.com/drone/drone/server.HeapHandler.func1
-41	|	Debug	|	0	|	GET	|	[/api/debug/pprof/profile]( )	|	0	|	github.com/drone/drone/server.ProfileHandler.func1
-42	|	Debug	|	0	|	GET	|	[/api/debug/pprof/symbol]( )	|	0	|	github.com/drone/drone/server.SymbolHandler.func1
-43	|	Debug	|	0	|	POST	|	[/api/debug/pprof/symbol]( )	|	0	|	github.com/drone/drone/server.SymbolHandler.func1
-44	|	Debug	|	0	|	GET	|	[/api/debug/pprof/threadcreate]( )	|	0	|	github.com/drone/drone/server.ThreadCreateHandler.func1
-45	|	Debug	|	0	|	GET	|	[/api/debug/pprof/trace]( )	|	0	|	github.com/drone/drone/server.TraceHandler.func1
+序号	|	模块	|	功能简述	|	请求方式	|	请求地址	|	后台响应方法
+---|---|---|---|---|---
+1	|	用户管理	|	返回当前登录用户的详细信息	|	GET	|	[/api/user](./用户管理#1当前用户信息)	|	server.GetSelf
+2	|	用户管理	|	返回用户对仓库的操作记录，如推送、合并分支等	|	GET	|	[/api/user/feed](./用户管理#2当前用户操作仓库记录)	|	server.GetFeed
+3	|	用户管理	|	返回当前用户所有开启了WebHook的仓库详细信息	|	GET	|	[/api/user/repos](./用户管理#3所属当前用户的已开启WebHook的仓库信息)	|	server.GetRepos
+4	|	用户管理	|	返回当前用户的所有仓库系信息	|	GET	|	[/api/user/repos/remote](./用户管理#4所属当前用户的所有仓库信息)	|	server.GetRemoteRepos
+5	|	用户管理	|	使当前token立即失效	|	DELETE	|	[/api/user/token](./用户管理#5销毁当前用户token)	|	server.DeleteToken
+6	|	用户管理	|	返回当前用户的token	|	POST	|	[/api/user/token](./用户管理#6获取当前用户token)	|	server.PostToken
+7	|	用户管理	|	返回所有活跃用户信息	|	GET	|	[/api/users](./用户管理#7获取所有用户信息)	|	server.GetUsers
+8	|	用户管理	|	创建一个新的账户，并返回该用户的详细信息	|	POST	|	[/api/users](./用户管理#8创建用户)	|	server.PostUser
+9	|	用户管理	|	删除指定的用户	|	DELETE	|	[/api/users/:login](./用户管理#9删除指定用户)	|	server.DeleteUser
+10	|	用户管理	|	获取指定用户的详细信息	|	GET	|	[/api/users/:login](./用户管理#10获取指定用户信息)	|	server.GetUser
+11	|	用户管理	|	更新用户信息	|	PATCH	|	[/api/users/:login](./用户管理#11更新用户信息)	|	server.PatchUser
+12	|	构建管理	|	查询当前正在进行构建的仓库信息	|	GET	|	[/api/builds](./构建管理#1查询当前正在进行构建的仓库信息)	|	server.GetBuildQueue
+13	|	构建管理	|	获取指定仓库构建信息	|	GET	|	[/api/repos/:owner/:name/builds](./构建管理#2获取指定仓库构建信息)	|	server.GetBuilds
+14	|	构建管理	|	获取指定仓库指定的构建信息	|	GET	|	[/api/repos/:owner/:name/builds/:number](./构建管理#3获取指定仓库指定的构建信息)	|	server.GetBuild
+15	|	构建管理	|	根据构建编号进行重新构建	|	POST	|	[/api/repos/:owner/:name/builds/:number](./构建管理#4重新构建)	|	server.PostBuild
+16	|	构建管理	|	根据构建编号和job编号取消指定的构建	|	DELETE	|	[/api/repos/:owner/:name/builds/:number/:job](./构建管理#6取消指定的构建)	|	server.DeleteBuild
+17	|	仓库管理	|	删除仓库构建信息	|	DELETE	|	[/api/repos/:owner/:name](./仓库管理#1删除仓库构建信息)	|	server.DeleteRepo
+18	|	仓库管理	|	返回仓库详细信息	|	GET	|	[/api/repos/:owner/:name](./仓库管理#2获取仓库信息)	|	server.GetRepo
+19	|	仓库管理	|	更新仓库响应配置	|	PATCH	|	[/api/repos/:owner/:name](./仓库管理#3更新仓库响应配置)	|	server.PatchRepo
+20	|	仓库管理	|	激活仓库事件响应	|	POST	|	[/api/repos/:owner/:name](./仓库管理#4激活仓库事件响应)	|	server.PostRepo
+21	|	仓库管理	|	修改仓库拥有权【待测】	|	POST	|	[/api/repos/:owner/:name/chown](./仓库管理#5修改仓库拥有权)	|	server.ChownRepo
+22	|	构建管理	|	获取构建时的所以构建日志	|	GET	|	[/api/repos/:owner/:name/logs/:number/:job](./构建管理#5获取构建日志)	|	server.GetBuildLogs
+23	|	secret管理	|	获取设置在仓库中的secret	|	GET	|	[/api/repos/:owner/:name/secrets](./secret管理#1获取设置在仓库中的secret)	|	server.GetSecrets
+24	|	secret管理	|	给指定仓库增加secret	|	POST	|	[/api/repos/:owner/:name/secrets](./secret管理#2给指定仓库增加secret)	|	server.PostSecret
+25	|	secret管理	|	删除仓库指定的secret	|	DELETE	|	[/api/repos/:owner/:name/secrets/:secret](./secret管理#3删除仓库指定的secret)	|	server.DeleteSecret
+26	|	secret管理	|	更新仓库secret【待测】	|	POST	|	[/api/repos/:owner/:name/sign](./secret管理#4更新仓库secret)	|	server.Sign
+27	|	secret管理	|	查询组织的secret	|	GET	|	[/api/teams/:team/secrets](./secret管理#5查询组织的secret)	|	server.GetTeamSecrets
+28	|	secret管理	|	增加组织的secret	|	POST	|	[/api/teams/:team/secrets](./secret管理#6增加组织的secret)	|	server.PostTeamSecret
+29	|	secret管理	|	删除组织的secret	|	DELETE	|	[/api/teams/:team/secrets/:secret](./secret管理#7删除组织的secret)	|	server.DeleteTeamSecret
+30	|	secret管理	|	查询全局secrets	|	GET	|	[/api/global/secrets](./secret管理#8查询全局secrets)	|	server.GetGlobalSecrets
+31	|	secret管理	|	增加全局secrets	|	POST	|	[/api/global/secrets](./secret管理#9增加全局secrets)	|	server.PostGlobalSecret
+32	|	secret管理	|	删除全局secrets	|	DELETE	|	[/api/global/secrets/:secret](./secret管理#10删除全局secrets)	|	server.DeleteGlobalSecret
+33	|	其它	|	api-agents【待测】	|	GET	|	[/api/agents](./其它#1api-agents)	|	server.GetAgents
+34	|	其它	|	查看CC-Menu	|	GET	|	[/api/badges/:owner/:name/cc.xml](./其它#2查看CC-Menu)	|	server.GetCC
+35	|	其它	|	获取构建徽章	|	GET	|	[/api/badges/:owner/:name/status.svg](./其它#3获取构建徽章)	|	server.GetBadge
+36	|	Debug	|	api-debug-pprof【待测】	|	GET	|	[/api/debug/pprof/](./Debug#1api-debug-pprof)	|	server.IndexHandler.func1
+37	|	Debug	|	api-debug-pprof-block【待测】	|	GET	|	[/api/debug/pprof/block](./Debug#2api-debug-pprof-block)	|	server.BlockHandler.func1
+38	|	Debug	|	api-debug-pprof-cmdline【待测】	|	GET	|	[/api/debug/pprof/cmdline](./Debug#3api-debug-pprof-cmdline)	|	server.CmdlineHandler.func1
+39	|	Debug	|	api-debug-pprof-goroutine【待测】	|	GET	|	[/api/debug/pprof/goroutine](./Debug#4api-debug-pprof-goroutine)	|	server.GoroutineHandler.func1
+40	|	Debug	|	api-debug-pprof-heap【待测】	|	GET	|	[/api/debug/pprof/heap](./Debug#5api-debug-pprof-heap)	|	server.HeapHandler.func1
+41	|	Debug	|	api-debug-pprof-profile【待测】	|	GET	|	[/api/debug/pprof/profile](./Debug#6api-debug-pprof-profile)	|	server.ProfileHandler.func1
+42	|	Debug	|	api-debug-pprof-symbol【待测】	|	GET	|	[/api/debug/pprof/symbol](./Debug#7api-debug-pprof-symbol)	|	server.SymbolHandler.func1
+43	|	Debug	|	api-debug-pprof-symbol【待测】	|	POST	|	[/api/debug/pprof/symbol](./Debug#8api-debug-pprof-symbol)	|	server.SymbolHandler.func1
+44	|	Debug	|	api-debug-pprof-threadcreate【待测】	|	GET	|	[/api/debug/pprof/threadcreate](./Debug#9api-debug-pprof-threadcreate)	|	server.ThreadCreateHandler.func1
+45	|	Debug	|	api-debug-pprof-trace【待测】	|	GET	|	[/api/debug/pprof/trace](./Debug#10api-debug-pprof-trace)	|	server.TraceHandler.func1
+
